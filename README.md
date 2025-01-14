@@ -2,7 +2,7 @@
 
 A TypeScript client for interacting with the Planka API.
 
-This documentation was generated with the assistance of the DeepSeek Large Language Model.
+This documentation add code was generated with the assistance of the DeepSeek Large Language Model.
 
 ## Installation
 ```bash
