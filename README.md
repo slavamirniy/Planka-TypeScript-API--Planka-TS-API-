@@ -1,14 +1,13 @@
 # Planka TypeScript API Client
 
-TypeScript клиент для работы с API Planka.
+A TypeScript client for interacting with the Planka API.
 
-## Установка
-
+## Installation
 ```bash
 npm install planka-ts-api
 ```
 
-## Использование
+## Usage
 
 ```typescript
 import { 
@@ -21,52 +20,52 @@ import {
 const baseURL = 'https://your-planka-instance.com';
 const authToken = 'your-auth-token';
 
-// Создание экземпляров контроллеров
+// Create controller instances
 const userController = new UserController(baseURL, authToken);
 const projectController = new ProjectController(baseURL, authToken);
 const boardController = new BoardController(baseURL, authToken);
 const cardController = new CardController(baseURL, authToken);
 
-// Примеры использования
+// Usage examples
 
-// Получение списка пользователей
+// Get a list of users
 const users = await userController.list();
 
-// Создание нового проекта
-const project = await projectController.create('Новый проект');
+// Create a new project
+const project = await projectController.create('New Project');
 
-// Создание доски в проекте
-const board = await boardController.create(project.id, 'Новая доска', 0);
+// Create a board in the project
+const board = await boardController.create(project.id, 'New Board', 0);
 
-// Создание карточки
-const card = await cardController.create('listId', 'Новая задача', 0);
+// Create a card
+const card = await cardController.create('listId', 'New Task', 0);
 
-// Обновление карточки
+// Update a card
 await cardController.update({
     ...card,
-    name: 'Обновленная задача'
+    name: 'Updated Task'
 });
 ```
 
-## Доступные контроллеры
+## Available Controllers
 
-- `AttachmentController` - управление вложениями
-- `BoardController` - управление досками
-- `BoardListController` - управление списками на досках
-- `BoardMembershipController` - управление участниками досок
-- `CardController` - управление карточками
-- `CardLabelController` - управление метками карточек
-- `CardTaskController` - управление задачами в карточках
-- `CommentController` - управление комментариями
-- `LabelController` - управление метками
-- `NotificationController` - управление уведомлениями
-- `ProjectController` - управление проектами
-- `ProjectManagerController` - управление менеджерами проектов
-- `UserController` - управление пользователями
+- `AttachmentController` - Manage attachments
+- `BoardController` - Manage boards
+- `BoardListController` - Manage board lists
+- `BoardMembershipController` - Manage board memberships
+- `CardController` - Manage cards
+- `CardLabelController` - Manage card labels
+- `CardTaskController` - Manage card tasks
+- `CommentController` - Manage comments
+- `LabelController` - Manage labels
+- `NotificationController` - Manage notifications
+- `ProjectController` - Manage projects
+- `ProjectManagerController` - Manage project managers
+- `UserController` - Manage users
 
-## Типы данных
+## Data Types
 
-Библиотека включает TypeScript типы для всех сущностей:
+The library includes TypeScript types for all entities:
 
 - `UserDto`
 - `ProjectDto`
@@ -74,21 +73,21 @@ await cardController.update({
 - `CardDto`
 - `LabelColorEnum`
 - `BoardMembershipRoleEnum`
-- и другие
+- and others
 
-## Разработка
+## Development
 
 ```bash
-# Установка зависимостей
+# Install dependencies
 npm install
 
-# Сборка
+# Build the project
 npm run build
 
-# Запуск тестов
+# Run tests
 npm test
 ```
 
-## Лицензия
+## License
 
-MIT 
+MIT
